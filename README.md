@@ -110,16 +110,103 @@ console.log(colors.at(-1)); // Returns yellow
 
 [Back to top](#Lecture_Arrays_Loops_Functions)
 
-
 ### Modifying elements in Arrays
 
-index, with
+In order to edit an element we need to know it´s index position and then we can just use the square brackets. In order to access it and modify it, we modify it by assigning a new value to it.
+
+```js
+const colors = ["Red", "Blue", "Green", "Yellow"];
+colors[0] = "Orange";
+console.log(colors); // orange, blue, green, yellow
+
+colors[2] = "Brown";
+console.log(colors); // orange, blue, brown, yellow
+```
+
+We can also update an element of an array with `with()`. The difference here is that this method takes 2 parameters. 
+
+The first one is the index position of the element we want to change. The second one is the new value that we would like to give that element. Then a copt of the array is returned to us with the modifications.
+
+```js
+const colors = ["Red", "Blue", "Green", "Yellow"];
+
+const updatedColors = colors.with(1, "Pink");
+
+console.log(colors); // red, blue, green, yellow
+console.log(updatedColors); // red, pink, green, yellow
+```
+
+[Back to top](#Lecture_Arrays_Loops_Functions)
 
 ### Properties of Arrays
 
+Properties are just fixed values, in our case the property we are interested in is the `.length`-property. This property gives us the length, as a number, of the array to us. If we have five elements in an array, the value of length will be 5. 
+
+```js
+const colors = ["Red", "Blue", "Green", "Yellow"];
+
+let length = colors.length; // here we just save the value to a variable, we don´t have to do this
+console.log(length); // returns 4
+console.log(colors.length); // returns 4
+```
+
+If we add or remove elements of the array, this value will update accordingly. 
+
 ### Static Methods
 
+Let´s skip this for now. I will add content here later.
+
+[Back to top](#Lecture_Arrays_Loops_Functions)
+
 ### Array Methods
+
+A method is just a set of instructions that predefined and bundled inside a method. These instructions are usually very common and instead of us having to write the same code over and over, JS has created these methods for us to use whenever we want to. 
+
+#### push(item1, item2, item...) => New length of array
+
+Is used to add an element to the end of an existing array. It takes one or more parameters, and these parameters are the new elements to be added. It also returns something, and that something is the new length of the array.
+
+```js
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+number.push(9); // adds 9 to the end of the array "numbers"
+console.log(numbers);
+
+// if we want to keep the new length of array
+let length = numbers.push(20);
+console.log(length); // returns 10 since numbers.push returns the new length of array
+```
+
+[Back to top](#Lecture_Arrays_Loops_Functions)
+
+#### pop() => the removed element
+
+Is used to remove the last element of an array. The element that was removed is also returned by the method.
+
+```js
+const cities = ["Stockholm", "Malmö", "Höör", "Göteborg", "Lund"];
+
+// remove the last element
+cities.pop();
+console.log(cities); // Lund will be gone now from cities
+```
+
+[Back to top](#Lecture_Arrays_Loops_Functions)
+
+#### unshift(item1, item2, item...) => new length of array
+
+Is used to add an element to the beginning of the array instead of the end. It also returns the new length of the array as a number.
+
+```js
+const cities = ["Stockholm", "Malmö", "Höör", "Göteborg", "Lund"];
+
+// remove the last element
+cities.unshift("Linköping");
+console.log(cities); // Linköping is now added to the start of cities
+```
+
+[Back to top](#Lecture_Arrays_Loops_Functions)
+
+
 
 push, pop, unshift, shift, includes, indexOf, join, splice, slice
 
