@@ -299,7 +299,7 @@ Or to understand it by name, we **join** the elements in an array to a string.
 
 [Back to top](#Lecture_Arrays_Loops_Functions)
 
-#### splice(start, deleteCount, item1?, item2?, item...?) =>
+#### splice(start, deleteCount, item1?, item2?, item...?) => 
 
 `?` means it´s an optional parameter.
 
