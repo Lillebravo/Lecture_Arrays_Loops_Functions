@@ -30,8 +30,40 @@ let length = numbers.push(20);
 
 console.log(length); // returns 10 since numbers.push returns the new length of array */
 
-const cities = ["Stockholm", "Malmö", "Höör", "Göteborg", "Lund"];
+/* const cities = ["Stockholm", "Malmö", "Höör", "Göteborg", "Lund"];
 
 // remove the last element
 cities.unshift("Linköping");
-console.log(cities); // Linköping is now added to the start of cities
+console.log(cities); // Linköping is now added to the start of cities */
+
+/* const cities = ["Stockholm", "Malmö", "Höör", "Göteborg", "Lund"];
+
+// remove the last element
+cities.shift("Linköping");
+console.log(cities); // Stockholm is removed at the start of cities */
+
+/* const numbers = [2, 4, 6, 8, 10];
+
+if (numbers.includes(6)){ // will return true since 6 exists in the array
+    console.log("number 6 exists in the array"); 
+} else {
+    console.log("number 6 doesn´t exist in the array");
+} */
+
+/* const cities = ["Stockholm", "Malmö", "Höör", "Göteborg", "Lund"];
+const indexOfMalmo = cities.indexOf("Malmö");
+
+console.log(cities);
+console.log(indexOfMalmo); // returns 1 */
+
+/* const cities = ["Stockholm", "Malmö", "Höör", "Göteborg", "Lund"];
+const citiesAsString = cities.join();
+
+console.log(cities); 
+console.log(citiesAsString); */
+
+const cities = ["Stockholm", "Malmö", "Höör", "Göteborg", "Lund"];
+const citiesAsString = cities.join(", "); 
+
+console.log(cities); 
+console.log(citiesAsString);

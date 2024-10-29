@@ -206,9 +206,116 @@ console.log(cities); // Linköping is now added to the start of cities
 
 [Back to top](#Lecture_Arrays_Loops_Functions)
 
+#### shift() => the removed element
 
+Is used to remove an element from the beginning of an array and returns that removed element.
 
-push, pop, unshift, shift, includes, indexOf, join, splice, slice
+```js
+const cities = ["Stockholm", "Malmö", "Höör", "Göteborg", "Lund"];
+
+// remove the last element
+cities.shift("Linköping");
+console.log(cities); // Stockholm is removed at the start of cities
+```
+
+[Back to top](#Lecture_Arrays_Loops_Functions)
+
+#### includes(itemOfInterest) => boolean (true/false)
+
+Is used to check if an item/element exists in an array or not. The parameter is the item/element we are looking for, and the return value is either true or false.
+
+```js
+const numbers = [2, 4, 6, 8, 10];
+
+if (numbers.includes(6)){
+    console.log("number 6 exists in the array");
+} else {
+    console.log("number 6 doesn´t exist in the array");
+}
+
+// This method makes it easier to look at the code
+const nr8Exists = numbers.includes(8);
+if (nr8Exists) {
+    // do something
+}
+```
+
+If you have more complex conditions in your if-checks, always try to store them in variables with readable names instead. It makes the code more readable and maintainable. 
+
+[Back to top](#Lecture_Arrays_Loops_Functions)
+
+#### indexOf(item1) => the index position OR -1 if it doesn´t exist
+
+Is used to find an index position of a specific item/element inside the array. If it exists, the index is returned as a number, and if it doesn´t negative one `-1` is returned. Keep that in mind when using it in if checks. The only falsy value is 0 so -1 is still truthy.
+
+```js
+const cities = ["Stockholm", "Malmö", "Höör", "Göteborg", "Lund"];
+const indexOfMalmo = cities.indexOf("Malmö");
+
+console.log(cities); 
+console.log(indexOfMalmo); // returns 1
+```
+
+If we try to get an index of an item that doesn´t exist, will return `-1`.
+
+```js
+const indexOfSkurup = cities.indexOf("Skurup");
+console.log(indexOfSkurup); // returns -1
+```
+
+[Back to top](#Lecture_Arrays_Loops_Functions)
+
+#### join() => a string including all the elements in the array
+
+Is used to convert an array of elements to a string containing those elements. It doesn´t matter if it´s jsut number, strings or something else. The method always tries to convert everything into a long string. 
+
+It also takes a parameter that is a character that will be used to separate the elements with. Can be an empty space, dash, underscore, or any other character. The separator is optional, hence the question mark in the syntax. 
+
+```js
+const cities = ["Stockholm", "Malmö", "Höör", "Göteborg", "Lund"];
+const citiesAsString = cities.join(); 
+
+console.log(cities); 
+console.log(citiesAsString);
+```
+
+If we don´t specify a separator, per default, every element will be separated with a comma. 
+
+```js
+const cities = ["Stockholm", "Malmö", "Höör", "Göteborg", "Lund"];
+const citiesAsString = cities.join(); // stockholm,malmö,höör,göteborg,lund
+```
+
+This is alright, but maybe we want an empty space instead between each element:
+
+```js
+const cities = ["Stockholm", "Malmö", "Höör", "Göteborg", "Lund"];
+const citiesAsString = cities.join(" "); // stockholm, malmö, höör, göteborg, lund
+```
+
+In short, `join()` converts an array to a string and separates every element with a separator, that is predefined inside `join()`, `join(/)` - gives an / between the cities, for example. 
+
+Or to understand it by name, we **join** the elements in an array to a string.
+
+[Back to top](#Lecture_Arrays_Loops_Functions)
+
+#### splice(start, deleteCount, item1?, item2?, item...?) =>
+
+`?` means it´s an optional parameter.
+
+The splice method lets us modify the content of an array on any given index position. 
+
+It takes several parameters. The first one is the index on which we would like to start our modifications. 
+
+The next one is the delete count, how many elements do we want to delete? If we don´t want to delete anything, we just assign 0 to this parameter. If we delete something, it will start deleting from the `start` parameter. In other words, the index position we assign to `start`.
+
+The third one (or more) is the new items/elements we would like to add to the array.
+
+[Back to top](#Lecture_Arrays_Loops_Functions)
+
+#### slice() => 
+
+[Back to top](#Lecture_Arrays_Loops_Functions)
 
 ## Loops
 
