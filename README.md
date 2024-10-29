@@ -76,7 +76,7 @@ There are 2 ways to access elements in an array. The first, and most common one 
 
 An array is zero-index-based. In order to access the first element in the array, we access the element on index position 0, the second on index position 1 and so on.
 
-So to access an element, we just reference the variable that points to the array, and access it with an index with the helo of square brackes `[]`-
+So to access an element, we just reference the variable that points to the array, and access it with an index with the help of square brackes `[]`.
 
 Acessing first element of array:
 
@@ -107,6 +107,9 @@ The nice thing about the `at()` method is that is accepts negative navlues, and 
 const colors = ["Red", "Blue", "Green", "Yellow"];
 console.log(colors.at(-1)); // Returns yellow
 ```
+
+[Back to top](#Lecture_Arrays_Loops_Functions)
+
 
 ### Modifying elements in Arrays
 
