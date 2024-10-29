@@ -1,69 +1,145 @@
-/* const numbers = [46, 34, 10, 77];
-console.log(numbers[0]); // returns 46
+// ########## Creating an array ########## //
+// const numbers = [46, 34, 10, 77];
+// console.log(numbers[10]);
 
-const Red = "Red";
+// ########## Accessing an array ########## //
 
-const colors = [Red, "Green", "Blue", "Orange"];
-console.log(colors.at(2)); // returns blue
+// const Red = "Red";
 
-console.log(colors.at(-3)); // returns orange */
+// const colors = [Red, "Green", "Blue", "Orange"];
+// console.log(colors.at(2));
 
-/* const colors = ["Red", "Blue", "Green", "Yellow"];
+// console.log(colors.at(-3));
 
-const updatedColors = colors.with(1, "Pink");
+// ########## Modifying an array ########## //
 
-console.log(colors); // red, blue, green, yellow
-console.log(updatedColors); // red, pink, green, yellow */
+// const colors = ["Red", "Green", "Blue", "Orange"];
+// colors[0] = "Yellow";
+// console.log(colors);
+// colors[2] = "Brown";
+// console.log(colors);
 
-/* const colors = ["Red", "Blue", "Green", "Yellow"];
+// const colors = ["Red", "Green", "Blue", "Orange"];
+// const updatedColors = colors.with(1, "Pink");
 
-let length = colors.length;
-console.log(length); // returns 4 */
+// console.log(colors);
+// console.log(updatedColors);
 
-/* const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+// const colors = ["Red", "Green", "Blue", "Orange"];
 
-numbers.push(9); // adds 9 to the end of the array "numbers"
+// ########## Properties of an array ########## //
 
-console.log(numbers);
+// const colors = ["Red", "Green", "Blue", "Orange", "Yellow"];
+// const length = colors.length;
+// console.log(length); // 4
 
-let length = numbers.push(20);
+// ########## push() ########## //
 
-console.log(length); // returns 10 since numbers.push returns the new length of array */
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
 
-/* const cities = ["Stockholm", "Malmö", "Höör", "Göteborg", "Lund"];
+// // Let's push a 9 to the end.
+// numbers.push(9);
 
-// remove the last element
-cities.unshift("Linköping");
-console.log(cities); // Linköping is now added to the start of cities */
+// // Let's push 10 and 11
+// numbers.push(10, 11);
 
-/* const cities = ["Stockholm", "Malmö", "Höör", "Göteborg", "Lund"];
+// ########## pop() ########## //
 
-// remove the last element
-cities.shift("Linköping");
-console.log(cities); // Stockholm is removed at the start of cities */
+// const cities = ["Stockholm", "Göteborg", "Malmö", "Lund"];
 
-/* const numbers = [2, 4, 6, 8, 10];
+// // Remove the last element
+// cities.pop();
+// console.log(cities);
 
-if (numbers.includes(6)){ // will return true since 6 exists in the array
-    console.log("number 6 exists in the array"); 
-} else {
-    console.log("number 6 doesn´t exist in the array");
-} */
+// ########## unshift() ########## //
 
-/* const cities = ["Stockholm", "Malmö", "Höör", "Göteborg", "Lund"];
-const indexOfMalmo = cities.indexOf("Malmö");
+// const cities = ["Stockholm", "Göteborg", "Malmö", "Lund"];
 
-console.log(cities);
-console.log(indexOfMalmo); // returns 1 */
+// cities.unshift("Linköping");
+// console.log(cities);
 
-/* const cities = ["Stockholm", "Malmö", "Höör", "Göteborg", "Lund"];
-const citiesAsString = cities.join();
+// ########## shift() ########## //
 
-console.log(cities); 
-console.log(citiesAsString); */
+// const cities = ["Stockholm", "Göteborg", "Malmö", "Lund"];
 
-const cities = ["Stockholm", "Malmö", "Höör", "Göteborg", "Lund"];
-const citiesAsString = cities.join(", "); 
+// cities.shift();
+// console.log(cities); //["Göteborg", "Malmö", "Lund"];
 
-console.log(cities); 
-console.log(citiesAsString);
+// ########## includes() ########## //
+
+// const numbers = [2, 4, 8, 10];
+
+// if (numbers.includes(6)) {
+//   console.log("The number 6 exists in the array");
+// } else {
+//   console.log("There is no number 6 in the array");
+// }
+
+// ########## indexOf() ########## //
+
+// const cities = ["Stockholm", "Göteborg", "Malmö", "Lund"];
+
+// const indexOfMalmo = cities.indexOf("Malmö");
+// console.log(cities);
+// console.log(indexOfMalmo);
+
+// ########## join() ########## //
+
+// const cities = ["Stockholm", "Göteborg", "Malmö", "Lund"];
+// const citiesAsString = cities.join();
+// console.log(citiesAsString);
+
+// ########## splice() ########## //
+
+// remove Denmark
+// const countries = ["Sweden", "Denmark", "Finland", "Norway", "Iceland"];
+// countries.splice(1, 1);
+// console.log(countries); // ["Sweden", "Finland", "Norway", "Iceland"];
+
+// remove Denmark and Finland
+
+// countries.splice(1, 2);
+// console.log(countries); // ["Sweden", "Norway", "Iceland"];
+
+// replace Norway with Germany
+
+// const countries = ["Sweden", "Denmark", "Finland", "Norway", "Iceland"];
+// countries.splice(3, 1, "Germany");
+// console.log(countries); // ["Sweden", "Denmark", "Finland", "Germany", "Iceland"];
+
+// ########## while loop ########## //
+
+// let count = 0;
+
+// while (count < 100) {
+//   count++;
+//   // count = count + 1; // This is equal to above
+//   console.log(count);
+// }
+
+// console.log(`The count is now ${count} after the loop canceled.`);
+
+// with break
+// let count = 120;
+
+// while (count < 100) {
+//   count++;
+//   // count = count + 1; // This is equal to above
+//   console.log(count);
+
+//   if (count == 47) {
+//     console.log("The count is now 47 and that's enough!");
+//     break;
+//   }
+// }
+
+// console.log(`The count is now ${count} after the loop canceled.`);
+
+// ########## do-while loop ########## //
+
+let count = 0;
+
+do {
+  count++;
+  console.log(count);
+} while (count === 0);
