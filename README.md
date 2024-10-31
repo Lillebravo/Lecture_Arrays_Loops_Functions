@@ -395,7 +395,7 @@ while (count < 100) {
   // count = count + 1; // This is equal to above
   console.log(count);
 
-  if (count == 47) {
+  if (count === 47) {
     console.log("The count is now 47 and that's enough!");
     break;
   }
@@ -420,7 +420,7 @@ do {
 } while (condition);
 ```
 
-Let's do the same example with the count, but set the condition to `count === 0`. This means the condition is true straight away but since it's a do-while, it will run atleast once and update the value so it's not 0 anymore. If we hadn't updated the value, this would have been a infinite loop.
+Let's do the same example with the count, but set the condition to `count !== 0`. This means the condition is false straight away but since it's a do-while, it will run atleast once and update the value so it's not 0 anymore.
 
 ```js
 let count = 0;
@@ -428,27 +428,230 @@ let count = 0;
 do {
   count++;
   console.log(count);
-} while (count === 0);
+} while (count !== 0);
 ```
+
+[Back to top](#Lecture_Arrays_Loops_Functions)
 
 ### For-loop with index
 
 The classic for loop is often used when you know in advance how many times you want to repeat an action, especially when working with lists or arrays.
 
+Syntax:
+
+```js
+for (initialValue; condition; change) {
+  // Code to be executed in each iteration.
+}
+```
+
+Let's take an example with an arrys of numbers. We just want to console.log each item/element inside the array.
+
+```js
+const numbers = [5, 2, 10, 15, 27, 99];
+
+for (let i = 0; i < numbers.length; i++) {
+  console.log(numbers[i]);
+}
+```
+
+The `initialValue` is the value of the index we will start looping on. In the case above, we start looping on index position 0, in other words, the first item/element in the array.
+
+The `condition` in this case is the `length` attribute of the array. It will always be equal to the numbers of items/elements in the array. It's good to use value instead of hard coding one, since we might not know how many items/elements there are inside the array.
+
+The `change` is just how we update the index value after each iteration. Usually we just increment it but we can do it in other ways as well.
+
+Let's try the opposite of the example, instead of going left to right, we can go right to left.
+
+```js
+const numbers = [5, 2, 10, 15, 27, 99];
+
+for (let i = numbers.length - 1; i >= 0; i--) {
+  console.log(numbers[i]);
+}
+```
+
+The reason for the `-1` inside the initialValue is because the length attribute just counts the total amount of items/elements. Which means that the length value will always be one more than the total number of index positions, since index position starts at 0.
+
+[Back to top](#Lecture_Arrays_Loops_Functions)
+
 ### For..of-loop
 
 The for-of loop is specifically for iterating over items in an iterable object (like an array). It’s useful when you only need each item, not the index.
+
+Syntax:
+
+```js
+for (variabel of array) {
+  // Code to be executed in each interation
+}
+```
+
+Example with car names, just log the car to the console.
+
+```js
+const cars = ["Volvo", "Saab", "Volkswagen", "BMW"];
+
+for (const car of cars) {
+  console.log(car);
+}
+```
+
+The `variable` is a local variable that is created and re-created in each iteration and always has the value of the element that is being iterated over.
+
+[Back to top](#Lecture_Arrays_Loops_Functions)
 
 ### For..in-loop
 
 The for-in loop is useful for iterating over keys (or properties) in an object. It’s not generally used for arrays (as it returns indexes as strings), but it’s great for objects.
 
+[Back to top](#Lecture_Arrays_Loops_Functions)
+
 ## Functions
+
+A function is basically a small (or larger) piece of code that has been packaged to a entity that can be reused across your application as many times as you would like.
 
 ### Create functions
 
+There are three "ways" to create functions in JS. Two of them are kind of similar but one of them is more different.
+
+#### with the function keyword
+
+```js
+function functionName(/* zero or more params */) {
+  // The code to be executed.
+
+  // zero or ONE return value
+  return something;
+}
+```
+
+Let's try a greeting function
+
+```js
+function greeting() {
+  console.log("Hello there!");
+}
+```
+
+A breakdown:
+
+- `function`: reserved keyword in JS, used to tell JS that a function is to be defined.
+
+- `functionName`: just the name of the function, pick a name that describes the function.
+
+- `parameters`: also called "arguments" sometimes, they are the data that the function needs in order to work. We can define zero or more of those.
+
+- `return value`: the values that is being returned from the fuction. You don't have to have a return value, it's totally fine for the functions to just run some code. But remember, you can only have ONE return value. If we don't defined a return value, the browser will do that for us and return `undefined`.
+
+[Back to top](#Lecture_Arrays_Loops_Functions)
+
+#### with a variabel and the function key word.
+
+```js
+const functionName = function (/* zero or more params */) {
+  // The code to be executed.
+
+  // zero or ONE return value
+  return something;
+};
+```
+
+Same example as above:
+
+```js
+const greeting = function () {
+  console.log("Hello there!");
+};
+```
+
+[Back to top](#Lecture_Arrays_Loops_Functions)
+
+#### with an arrow function
+
+```js
+const functionName = (/* zero or more params */) => {
+  // The code to be executed.
+
+  // zero or ONE return value
+  return something;
+};
+```
+
+Same example again:
+
+```js
+const greeting = () => {
+  console.log("Hello there!");
+};
+```
+
+[Back to top](#Lecture_Arrays_Loops_Functions)
+
+#### Key differences between them
+
+| Feature                         | Function Declaration               | Function Expression                | Arrow Function                        |
+| ------------------------------- | ---------------------------------- | ---------------------------------- | ------------------------------------- |
+| **Syntax**                      | `function name() { ... }`          | `const name = function() { ... }`  | `const name = () => { ... }`          |
+| **Hoisting**                    | Hoisted to the top of the scope    | Not hoisted                        | Not hoisted                           |
+| **`this` Binding**              | Dynamic (`this` depends on caller) | Dynamic (`this` depends on caller) | Lexical (`this` from outer scope)     |
+| **Usage of `arguments` Object** | Yes                                | Yes                                | No                                    |
+| **Can be Named**                | Yes                                | Optional                           | No                                    |
+| **Common Use Cases**            | General-purpose function           | Assigning functions as variables   | Short, concise functions or callbacks |
+| **Syntax Simplicity**           | Longer                             | Longer                             | Shorter and simpler                   |
+| **Return Statement (1-liner)**  | Requires `return`                  | Requires `return`                  | Implicit `return` if one-liner        |
+
+[Back to top](#Lecture_Arrays_Loops_Functions)
+
 ### Functions with parameters
+
+```js
+function greetWithName(name) {
+  console.log("Hello " + name + "!");
+
+  // Below is equal to above. This is called a template literal string. We can inject variables in to the string.
+  console.log(`Hello ${name}!`);
+}
+```
+
+The above was a simple one with a string as parameters. Even if we pass in a number, JS manages to convert that number to a string and execute the code.
+
+Let's take an example of a calculation.
+
+```js
+function addTwoNumbers(num1, num2) {
+  const result = num1 + num2;
+  console.log(`The result is ${result}`);
+}
+```
+
+[Back to top](#Lecture_Arrays_Loops_Functions)
 
 ### Functions with return value
 
+```js
+function giveMeTheNumber7() {
+  return 7;
+}
+
+const number = giveMeTheNumber7();
+```
+
+Here the functions returns a specific number. It means we can create a variable that is equal to the function, that will assign the return value of the function to the variable that we have created.
+
+[Back to top](#Lecture_Arrays_Loops_Functions)
+
 ### Function with both
+
+Here we have a function with both parameters and return value.
+
+```js
+function divide(num1, num2) {
+  const result = num1 / num2;
+  return result;
+}
+
+const result = divide(10, 2);
+```
+
+[Back to top](#Lecture_Arrays_Loops_Functions)
