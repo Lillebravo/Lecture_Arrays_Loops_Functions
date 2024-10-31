@@ -199,5 +199,9 @@ function fizzBuzz(exampleNumber) {
 
 
 // 18. Factorial Calculator
-
-Write a function called factorial that takes a positive integer as a parameter and returns the factorial of that number (e.g., 5! = 5 × 4 × 3 × 2 × 1).
+// Write a function called factorial that takes a positive 
+// integer as a parameter and returns the factorial of that
+// number (e.g., 5! = 5 × 4 × 3 × 2 × 1).
+function factorial() {
+    
+}
