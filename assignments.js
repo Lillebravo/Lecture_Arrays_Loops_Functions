@@ -188,7 +188,7 @@ for (const number of mixedNumbers) {
 function showPositiveNumbers() {
   let loopCounter = 0;
   console.log("27. Numbers: " + numbers);
-  while (loopCounter <= 10) {
+  while (loopCounter < numbers.length) {
     if (numbers[loopCounter] > 10) {
       break;
     }
